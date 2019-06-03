@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://i.loli.net/2019/06/03/5cf507ffe160c52359.png">
 <meta property="og:image" content="https://i.loli.net/2019/06/03/5cf508a35bc8223290.png">
-<meta property="og:updated_time" content="2019-06-03T12:14:10.408Z">
+<meta property="og:updated_time" content="2019-06-03T12:35:22.766Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="E洁家政服务平台开发与测试环境搭建">
 <meta name="twitter:description" content="配置环境搭建过程">
@@ -161,60 +161,50 @@
 <div class="container body-wrap">
     <article class="page-article fade" itemprop="blogPage">
         <div class="post-content page-content" id="page-content" itemprop="pageContent">
-            <h6 id="铺垫"><a href="#铺垫" class="headerlink" title="铺垫"></a>铺垫</h6><pre><code>        1.环境搭建
-        后端开发
-        Java
-        前置知识
-        1. CoreJava (集合，流，网络tcp/ip)
-        2. Java (servlet/jsp)
-        3. 数据库系统概论
-            mysql (navicator)
-         1) java基础环境
-            JDK1.8
-        mysql5
-        springboot-cli
-        springboot
-            springmvc     (servlet)
-            spring             (依赖注入，面向切面编程)
-            mybatis         (jdbc,sql)
-                mysql驱动
-            mybatis-generator
-                接口 xml -&gt; mapper
-            附件                 (fastdfs)
-            poi                 excel导出
-            登录、认证         spring-security + jwt (oauth2)
-            swagger         (api工具)
-    2) 高级环境
+            <h6 id="铺垫"><a href="#铺垫" class="headerlink" title="铺垫"></a>铺垫</h6><p>*1.环境搭建</p>
+<blockquote>
+<p>后端开发<br> Java<br> 前置知识</p>
+<pre><code>1. CoreJava (集合，流，网络tcp/ip)
+2. Java (servlet/jsp)
+3. 数据库系统概论
+    mysql (navicator)
+1) java基础环境
+    JDK1.8
+    mysql5
+    springboot-cli
+    springboot
+    springmvc     (servlet)
+    spring             (依赖注入，面向切面编程)
+    mybatis         (jdbc,sql)
+    mysql驱动
+    mybatis-generator
+        接口 xml -&gt; mapper
+        附件                 (fastdfs)
+        poi                 excel导出
+        登录、认证         spring-security + jwt (oauth2)
+        swagger         (api工具)
+2) 高级环境
         maven
         github(码云) git / svn(subversion)
         idea (eclipse)
-前端开发     
-    1) 基础环境
-        node
-        npm/yarn
-        create-react-app
-        蚂蚁     dva-li
-        网页 （web端）
-    2. android环境
-        sdk         android开发工具包
-        gradle    构建工具
-        模拟器          genymotion
-发布测试     
-    b/s架构
-        b     浏览器(在浏览器访问)
-        s     服务器(部署在服务器)
-购买云服务器（1月）
-腾讯云购买学生版的服务器ubuntu16.04 server
-重置一下密码
-</code></pre><h3 id="JDK安装"><a href="#JDK安装" class="headerlink" title="JDK安装"></a>JDK安装</h3><p> java development kit<br>        Hello.Java     -&gt;     Hello.class -&gt; JVM<br>        1.1 安装<br>            下一步<br>            所有的Java都安装在C:\Program Files\Java下<br>            jdk8u201的家目录如下：<br>            C:\Program Files\Java\jdk1.8.0_201<br>                jvm java虚拟机<br>                jre java运行时环境<br>        1.2 环境变量配置<br>            IDEA eclipse<br>            系统变量<br>            JAVA_HOME Java家目录<br>                【C:\Program Files\Java\jdk1.8.0_201】<br>            PATH             路径<br>                【C:\Program Files\Java\jdk1.8.0_201\bin】<br>                终端，java java.exe<br>                多个路径的集合，使用’;’来进行分割<br>                path1;path2;path3…<br>                &gt; java<br>            CLASSPATH<br>                【.】<br>                类加载路径<br>                jvm去哪里加载你的class </p>
-<h3 id="mysql安装"><a href="#mysql安装" class="headerlink" title="mysql安装"></a>mysql安装</h3><p> 安装包一直下一步<br>    <strong><em>1. 编码    utf8</em></strong></p>
-<pre><code>    2. 密码    root
+</code></pre><p>前端开发<br>    1) 基础环境<br>        node<br>        npm/yarn<br>        create-react-app<br>        蚂蚁     dva-li<br>        网页 （web端）<br>    2)android环境<br>        sdk         android开发工具包<br>        gradle    构建工具<br>        模拟器          genymotion<br>    3)发布测试<br>        b/s架构<br>            b     浏览器(在浏览器访问)<br>            s     服务器(部署在服务器)<br>    购买云服务器（1月）<br>    腾讯云购买学生版的服务器ubuntu16.04 server<br>    重置一下密码</p>
+</blockquote>
+<h2 id="JDK安装"><a href="#JDK安装" class="headerlink" title="JDK安装"></a>JDK安装</h2><blockquote>
+<p>java development kit<br>        Hello.Java     -&gt;     Hello.class -&gt; JVM<br>        1.1 安装<br>            下一步<br>            所有的Java都安装在C:\Program Files\Java下<br>            jdk8u201的家目录如下：<br>            C:\Program Files\Java\jdk1.8.0_201<br>                jvm java虚拟机<br>                jre java运行时环境<br>        1.2 环境变量配置<br>            IDEA eclipse<br>            系统变量<br>            JAVA_HOME Java家目录<br>                【C:\Program Files\Java\jdk1.8.0_201】<br>            PATH             路径<br>                【C:\Program Files\Java\jdk1.8.0_201\bin】<br>                终端，java java.exe<br>                多个路径的集合，使用’;’来进行分割<br>                path1;path2;path3…<br>java<br>            CLASSPATH<br>                【.】<br>                类加载路径<br>                jvm去哪里加载你的class </p>
+</blockquote>
+<h3 id="mysql安装"><a href="#mysql安装" class="headerlink" title="mysql安装"></a>mysql安装</h3><blockquote>
+<p>安装包一直下一步<br><strong><em>1. 编码    utf8</em></strong></p>
+<pre><code>2. 密码    root
     3. 如果安装失败,可能是没有c盘的操作权限.
 mysql 卸载重装
     1. 控制面板中卸载
     2. 删除C:\Program Files\Mysql
 </code></pre><p> <strong><em>记得打开文件夹的隐藏文件</em></strong><br> <strong><em>3.删除C:\ProgramData\Mysql</em></strong></p>
-<p>###云服务器的配置（组长）：<br> 腾讯云<br>        ip<br>        默认账号：ubuntu/密码</p>
+</blockquote>
+<p>###云服务器的配置（组长）：</p>
+<blockquote>
+<p>腾讯云<br>        ip<br>        默认账号：ubuntu/密码</p>
+</blockquote>
 <pre><code>1) jdk             运行在服务器中
 2) vsftpd     ftp服务器
     jdk安装包上传到云服务器

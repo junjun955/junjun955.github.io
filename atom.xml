@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-06-03T12:14:10.408Z</updated>
+  <updated>2019-06-03T12:35:22.766Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://yoursite.com/2019/06/03/E%E5%AE%B6%E6%94%BF%E6%9C%8D%E5%8A%A1%E5%B9%B3%E5%8F%B0%E5%BC%80%E5%8F%91%E4%B8%8E%E6%B5%8B%E8%AF%95%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/"/>
     <id>http://yoursite.com/2019/06/03/E家政服务平台开发与测试环境搭建/</id>
     <published>2019-06-03T11:16:46.816Z</published>
-    <updated>2019-06-03T12:14:10.408Z</updated>
+    <updated>2019-06-03T12:35:22.766Z</updated>
     
-    <content type="html"><![CDATA[<h6 id="铺垫"><a href="#铺垫" class="headerlink" title="铺垫"></a>铺垫</h6><pre><code>        1.环境搭建        后端开发        Java        前置知识        1. CoreJava (集合，流，网络tcp/ip)        2. Java (servlet/jsp)        3. 数据库系统概论            mysql (navicator)         1) java基础环境            JDK1.8        mysql5        springboot-cli        springboot            springmvc     (servlet)            spring             (依赖注入，面向切面编程)            mybatis         (jdbc,sql)                mysql驱动            mybatis-generator                接口 xml -&gt; mapper            附件                 (fastdfs)            poi                 excel导出            登录、认证         spring-security + jwt (oauth2)            swagger         (api工具)    2) 高级环境        maven        github(码云) git / svn(subversion)        idea (eclipse)前端开发         1) 基础环境        node        npm/yarn        create-react-app        蚂蚁     dva-li        网页 （web端）    2. android环境        sdk         android开发工具包        gradle    构建工具        模拟器          genymotion发布测试         b/s架构        b     浏览器(在浏览器访问)        s     服务器(部署在服务器)购买云服务器（1月）腾讯云购买学生版的服务器ubuntu16.04 server重置一下密码</code></pre><h3 id="JDK安装"><a href="#JDK安装" class="headerlink" title="JDK安装"></a>JDK安装</h3><p> java development kit<br>        Hello.Java     -&gt;     Hello.class -&gt; JVM<br>        1.1 安装<br>            下一步<br>            所有的Java都安装在C:\Program Files\Java下<br>            jdk8u201的家目录如下：<br>            C:\Program Files\Java\jdk1.8.0_201<br>                jvm java虚拟机<br>                jre java运行时环境<br>        1.2 环境变量配置<br>            IDEA eclipse<br>            系统变量<br>            JAVA_HOME Java家目录<br>                【C:\Program Files\Java\jdk1.8.0_201】<br>            PATH             路径<br>                【C:\Program Files\Java\jdk1.8.0_201\bin】<br>                终端，java java.exe<br>                多个路径的集合，使用’;’来进行分割<br>                path1;path2;path3…<br>                &gt; java<br>            CLASSPATH<br>                【.】<br>                类加载路径<br>                jvm去哪里加载你的class </p><h3 id="mysql安装"><a href="#mysql安装" class="headerlink" title="mysql安装"></a>mysql安装</h3><p> 安装包一直下一步<br>    <strong><em>1. 编码    utf8</em></strong></p><pre><code>    2. 密码    root    3. 如果安装失败,可能是没有c盘的操作权限.mysql 卸载重装    1. 控制面板中卸载    2. 删除C:\Program Files\Mysql</code></pre><p> <strong><em>记得打开文件夹的隐藏文件</em></strong><br> <strong><em>3.删除C:\ProgramData\Mysql</em></strong></p><p>###云服务器的配置（组长）：<br> 腾讯云<br>        ip<br>        默认账号：ubuntu/密码</p><pre><code>1) jdk             运行在服务器中2) vsftpd     ftp服务器    jdk安装包上传到云服务器3) mysql         服务器端的安装    1. 安装        $ sudo apt-get install mysql-server-5.7        配置root的默认密码（切记，不要忘记密码）    2. 配置        1) 默认编码为utf8            /etc/mysql/my.cnf        2) 云服务器上的mysql允许远程连接            1. 修改/etc/mysql/my.cnf</code></pre><p> [client]<br> default-character-set=utf8<br> [mysqld]<br> character-set-server=utf8<br> max_connections=1000</p><p> !includedir /etc/mysql/conf.d/<br> !includedir /etc/mysql/mysql.conf.d/</p><p> bind-address=0.0.0.0</p><pre><code>        2. 修改mysql数据库中user表            $ mysql -uroot -p            mysql&gt; use mysql            mysql&gt; update user set host = &apos;%&apos; where user =&apos;root&apos;        3. 重启mysql服务            $ sudo service mysql restart3) 使用    本地多人使用服务器上的mysql数据库    3.1 组长创建测试账号        用户名    briup        主机        %        密码         briup        确认密码     briup    3.2 组长授权    服务器上的mysql服务已经配置好了，ip为152.136.136.220，用户名briup,密码briup</code></pre><p> <img src="https://i.loli.net/2019/06/03/5cf507ffe160c52359.png" alt="p1" title="查看jdk环境变量"><br> <figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/06/03/5cf508a35bc8223290.png" alt="p2" title="服务器mysql登录">                </div>                <div class="image-caption">服务器mysql登录</div>            </figure></p>]]></content>
+    <content type="html"><![CDATA[<h6 id="铺垫"><a href="#铺垫" class="headerlink" title="铺垫"></a>铺垫</h6><p>*1.环境搭建</p><blockquote><p>后端开发<br> Java<br> 前置知识</p><pre><code>1. CoreJava (集合，流，网络tcp/ip)2. Java (servlet/jsp)3. 数据库系统概论    mysql (navicator)1) java基础环境    JDK1.8    mysql5    springboot-cli    springboot    springmvc     (servlet)    spring             (依赖注入，面向切面编程)    mybatis         (jdbc,sql)    mysql驱动    mybatis-generator        接口 xml -&gt; mapper        附件                 (fastdfs)        poi                 excel导出        登录、认证         spring-security + jwt (oauth2)        swagger         (api工具)2) 高级环境        maven        github(码云) git / svn(subversion)        idea (eclipse)</code></pre><p>前端开发<br>    1) 基础环境<br>        node<br>        npm/yarn<br>        create-react-app<br>        蚂蚁     dva-li<br>        网页 （web端）<br>    2)android环境<br>        sdk         android开发工具包<br>        gradle    构建工具<br>        模拟器          genymotion<br>    3)发布测试<br>        b/s架构<br>            b     浏览器(在浏览器访问)<br>            s     服务器(部署在服务器)<br>    购买云服务器（1月）<br>    腾讯云购买学生版的服务器ubuntu16.04 server<br>    重置一下密码</p></blockquote><h2 id="JDK安装"><a href="#JDK安装" class="headerlink" title="JDK安装"></a>JDK安装</h2><blockquote><p>java development kit<br>        Hello.Java     -&gt;     Hello.class -&gt; JVM<br>        1.1 安装<br>            下一步<br>            所有的Java都安装在C:\Program Files\Java下<br>            jdk8u201的家目录如下：<br>            C:\Program Files\Java\jdk1.8.0_201<br>                jvm java虚拟机<br>                jre java运行时环境<br>        1.2 环境变量配置<br>            IDEA eclipse<br>            系统变量<br>            JAVA_HOME Java家目录<br>                【C:\Program Files\Java\jdk1.8.0_201】<br>            PATH             路径<br>                【C:\Program Files\Java\jdk1.8.0_201\bin】<br>                终端，java java.exe<br>                多个路径的集合，使用’;’来进行分割<br>                path1;path2;path3…<br>java<br>            CLASSPATH<br>                【.】<br>                类加载路径<br>                jvm去哪里加载你的class </p></blockquote><h3 id="mysql安装"><a href="#mysql安装" class="headerlink" title="mysql安装"></a>mysql安装</h3><blockquote><p>安装包一直下一步<br><strong><em>1. 编码    utf8</em></strong></p><pre><code>2. 密码    root    3. 如果安装失败,可能是没有c盘的操作权限.mysql 卸载重装    1. 控制面板中卸载    2. 删除C:\Program Files\Mysql</code></pre><p> <strong><em>记得打开文件夹的隐藏文件</em></strong><br> <strong><em>3.删除C:\ProgramData\Mysql</em></strong></p></blockquote><p>###云服务器的配置（组长）：</p><blockquote><p>腾讯云<br>        ip<br>        默认账号：ubuntu/密码</p></blockquote><pre><code>1) jdk             运行在服务器中2) vsftpd     ftp服务器    jdk安装包上传到云服务器3) mysql         服务器端的安装    1. 安装        $ sudo apt-get install mysql-server-5.7        配置root的默认密码（切记，不要忘记密码）    2. 配置        1) 默认编码为utf8            /etc/mysql/my.cnf        2) 云服务器上的mysql允许远程连接            1. 修改/etc/mysql/my.cnf</code></pre><p> [client]<br> default-character-set=utf8<br> [mysqld]<br> character-set-server=utf8<br> max_connections=1000</p><p> !includedir /etc/mysql/conf.d/<br> !includedir /etc/mysql/mysql.conf.d/</p><p> bind-address=0.0.0.0</p><pre><code>        2. 修改mysql数据库中user表            $ mysql -uroot -p            mysql&gt; use mysql            mysql&gt; update user set host = &apos;%&apos; where user =&apos;root&apos;        3. 重启mysql服务            $ sudo service mysql restart3) 使用    本地多人使用服务器上的mysql数据库    3.1 组长创建测试账号        用户名    briup        主机        %        密码         briup        确认密码     briup    3.2 组长授权    服务器上的mysql服务已经配置好了，ip为152.136.136.220，用户名briup,密码briup</code></pre><p> <img src="https://i.loli.net/2019/06/03/5cf507ffe160c52359.png" alt="p1" title="查看jdk环境变量"><br> <figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="https://i.loli.net/2019/06/03/5cf508a35bc8223290.png" alt="p2" title="服务器mysql登录">                </div>                <div class="image-caption">服务器mysql登录</div>            </figure></p>]]></content>
     
     <summary type="html">
     
@@ -69,32 +69,6 @@
   </entry>
   
   <entry>
-    <title>categories</title>
-    <link href="http://yoursite.com/2019/04/15/categories/"/>
-    <id>http://yoursite.com/2019/04/15/categories/</id>
-    <published>2019-04-15T05:59:13.636Z</published>
-    <updated>2019-04-15T06:02:20.034Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
-    
-    <summary type="html">
-    
-      categories
-    
-    </summary>
-    
-      <category term="hexo" scheme="http://yoursite.com/categories/hexo/"/>
-    
-      <category term="categories" scheme="http://yoursite.com/categories/hexo/categories/"/>
-    
-    
-      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
-    
-      <category term="categories" scheme="http://yoursite.com/tags/categories/"/>
-    
-  </entry>
-  
-  <entry>
     <title>tags</title>
     <link href="http://yoursite.com/2019/04/15/tags/"/>
     <id>http://yoursite.com/2019/04/15/tags/</id>
@@ -117,6 +91,32 @@
       <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
     
       <category term="tags" scheme="http://yoursite.com/tags/tags/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>categories</title>
+    <link href="http://yoursite.com/2019/04/15/categories/"/>
+    <id>http://yoursite.com/2019/04/15/categories/</id>
+    <published>2019-04-15T05:59:13.636Z</published>
+    <updated>2019-04-15T06:02:20.034Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      categories
+    
+    </summary>
+    
+      <category term="hexo" scheme="http://yoursite.com/categories/hexo/"/>
+    
+      <category term="categories" scheme="http://yoursite.com/categories/hexo/categories/"/>
+    
+    
+      <category term="hexo" scheme="http://yoursite.com/tags/hexo/"/>
+    
+      <category term="categories" scheme="http://yoursite.com/tags/categories/"/>
     
   </entry>
   
